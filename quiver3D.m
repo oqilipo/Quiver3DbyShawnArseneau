@@ -24,15 +24,16 @@ function varargout = quiver3D(posArray, magnitudeArray, arrowColors, stemRatio,v
 %   magnitudeArray(:,1) = 1;
 %   quiver3D(posArray, magnitudeArray, 'g', 0.6);
 %
-%
 % Forms:
 %   quiver3D(posArray, magnitudeArray)
 %       plot a quiver of three-dimensional arrows with default color black
 %
 %   quiver3D(posArray, magnitudeArray, arrowColors)
 %
-%   quiver3D(..., arrowColors, stemRatio)
+%   quiver3D(posArray, magnitudeArray, arrowColors, stemRatio)
 %       ratio of the arrowhead (cone) to the arrowstem (cylinder) [default = 0.75]
+%
+%   quiver3D(AX,...) plots into AX instead of GCA.
 %
 %   Author: Shawn Arseneau
 %       Created: 2006-09-14
@@ -102,11 +103,7 @@ function arrowColors=validateArrowColors(arrowColors,numArrows)
 [arrowRow, arrowCol] = size(arrowColors);
 if arrowRow==1
     if ischar(arrowColors) %in ShortName or LongName color format
-        if arrowCol==1
-            RGBvalue = ColorSpec_ShortName_to_RGBvalue(arrowColors);
-        else
             RGBvalue = ColorSpec_LongName_to_RGBvalue(arrowColors);
-        end
     else
         if arrowCol~=3
             error('arrowColors in RGBvalue must be of the form 1x3');
