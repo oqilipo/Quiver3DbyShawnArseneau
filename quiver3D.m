@@ -103,7 +103,7 @@ function arrowColors=validateArrowColors(arrowColors,numArrows)
 [arrowRow, arrowCol] = size(arrowColors);
 if arrowRow==1
     if ischar(arrowColors) %in ShortName or LongName color format
-            RGBvalue = ColorSpec_LongName_to_RGBvalue(arrowColors);
+        RGBvalue = ColorSpec2RGBvalue(arrowColors);
     else
         if arrowCol~=3
             error('arrowColors in RGBvalue must be of the form 1x3');
