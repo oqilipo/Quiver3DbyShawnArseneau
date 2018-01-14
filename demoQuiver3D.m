@@ -2,8 +2,7 @@ clearvars; close all; opengl hardware
 
 %% Syntax
 % quiver3D(posArray, magnitudeArray)
-% quiver3D(posArray, magnitudeArray, one_ShortNameColor)
-% quiver3D(posArray, magnitudeArray, one_LongNameColor)
+% quiver3D(posArray, magnitudeArray, one_ColorName)
 % quiver3D(posArray, magnitudeArray, one_RGBvalueColor)
 % quiver3D(posArray, magnitudeArray, many_RGBvalueColor)
 % quiver3D(ax, ...)
@@ -16,13 +15,9 @@ clearvars; close all; opengl hardware
 %   Since arrow3D uses 'surf', you may use 'camlight' and 'lighting' to add
 %   more powerful visual effects of the data.
 %
-% quiver3D(..., one_ShortNameColor)
-%   colors all arrows the same color using MATLAB's ShortName color 
-%   convention, {'r','g',...} as per ColorSpec.
-%
-% quiver3D(..., one_LongNameColor)
-%   colors all arrows the same color using MATLAB's LongName color 
-%   convention, {'red','green',...} as per ColorSpec.
+% quiver3D(..., one_ColorName)
+%   colors all arrows the same color using MATLAB's color convention
+%   {'r' or 'red',...} as per ColorSpec.
 %
 % quiver3D(..., one_RGBvalueColor)
 %   colors all arrows the same color using the three element vector 

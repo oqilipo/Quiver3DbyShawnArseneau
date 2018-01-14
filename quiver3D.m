@@ -35,9 +35,9 @@ function varargout = quiver3D(posArray, magnitudeArray, arrowColors, stemRatio,v
 %
 %   quiver3D(AX,...) plots into AX instead of GCA.
 %
-%   Author: Shawn Arseneau
-%       Created: 2006-09-14
-%       Updated: 2018-01-11
+% Author: Shawn Arseneau
+%   Created: 2006-09-14
+%   Updated: 2018-01-11
 
 addpath(genpath([fileparts([mfilename('fullpath'), '.m']) '\' 'src']));
 

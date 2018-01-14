@@ -12,7 +12,7 @@ function arrowHandle = arrow3D(pos, deltaValues, colorCode, stemRatio, varargin)
 %       red arrow of magnitude of 100%, with the arrowstem spanning a
 %       distance of 82% while the arrowhead (cone) spans 18%.
 %
-%  Example:
+% Example:
 %    arrow3D([0,0,0], [4,3,7]);  % arrow with default parameters
 %    axis equal;
 %
