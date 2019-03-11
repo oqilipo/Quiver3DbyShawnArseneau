@@ -116,9 +116,9 @@ headY = headY + Vp(2) + Y;
 headZ = headZ + Vp(3) + Z;
 
 % Draw cylinder & cone
-hStem = surf(hAx, stemX, stemY, stemZ, 'FaceColor', colorCode, 'EdgeColor', 'none');
+hStem = patch(hAx, surf2patch(stemX, stemY, stemZ), 'FaceColor', colorCode, 'EdgeColor', 'none');
 hold(hAx,'on')
-hHead = surf(hAx, headX, headY, headZ, 'FaceColor', colorCode, 'EdgeColor', 'none');
+hHead = patch(hAx, surf2patch(headX, headY, headZ), 'FaceColor', colorCode, 'EdgeColor', 'none');
 
 if nargout==1
     arrowHandle = [hStem, hHead];
