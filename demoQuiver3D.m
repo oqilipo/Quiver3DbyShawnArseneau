@@ -40,7 +40,7 @@ for s=1:length(spH)
     camlight(spH(s),'head');
 end
 
-%% Example: Basic Call
+%% Examples
 [X, Y] = meshgrid(0:3:9, 0:3:9);
 Z = ones(size(X));
 U = zeros(size(X));
@@ -48,14 +48,18 @@ V = U;
 W = ones(size(X))*8;
 posArray = [X(:),Y(:),Z(:)];
 magnitudeArray = [U(:),V(:),W(:)];
-quiver3D(spH(1), posArray, magnitudeArray, 'r');
 
-%% Arrow-specific colors
+%% Basic call
+quiver3D(spH(1), posArray, magnitudeArray,'r');
+
+%% Arrow-specific colors and change of stem ratio
 arrowColors = jet(size(posArray,1));
-quiver3D(spH(2), posArray, magnitudeArray, arrowColors);
+quiver3D(spH(2), posArray, magnitudeArray, arrowColors, 0.9);
 
-%% Change of stemRatios
-quiver3D(spH(3), posArray, magnitudeArray, arrowColors, 0.9)
+%% Change of stem ratios and stem radius
+qH = quiver3D(spH(3), posArray, magnitudeArray, arrowColors, ...
+    linspace(0.5,0.9,size(posArray,1)), 'arrowRadius', 0.01);
+delete(qH(end,:))
 
 %% Helix Example
 radius = 7;   height = 1;  numRotations = 2;  numPoints = 25;  arrowScale = 0.8;
