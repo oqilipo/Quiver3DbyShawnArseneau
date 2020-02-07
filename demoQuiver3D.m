@@ -50,15 +50,15 @@ posArray = [X(:),Y(:),Z(:)];
 magnitudeArray = [U(:),V(:),W(:)];
 
 %% Basic call
-quiver3D(spH(1), posArray, magnitudeArray,'r');
+quiver3D(spH(1), posArray, magnitudeArray,'yellow');
 
 %% Arrow-specific colors and change of stem ratio
 arrowColors = jet(size(posArray,1));
-quiver3D(spH(2), posArray, magnitudeArray, arrowColors, 0.9);
+quiver3D(spH(2), posArray, magnitudeArray, arrowColors, 'stemRatio',0.9);
 
 %% Change of stem ratios and stem radius
 qH = quiver3D(spH(3), posArray, magnitudeArray, arrowColors, ...
-    linspace(0.5,0.9,size(posArray,1)), 'arrowRadius', 0.01);
+    'stemRatio',linspace(0.5,0.9,size(posArray,1)), 'arrowRadius', 0.01);
 delete(qH(end,:))
 
 %% Helix Example
@@ -69,5 +69,5 @@ quiver3D(posArray1, magnitudeArray1)
 radius = 2;   height = 0.66;  numRotations = 3;
 [posArray2, magnitudeArray2] = helix(radius, height, numRotations, numPoints, arrowScale);
 arrowColors2 = autumn(numPoints);
-quiver3D(posArray2, magnitudeArray2, arrowColors2, 0.6)
+quiver3D(posArray2, magnitudeArray2, arrowColors2, 'stemRatio',0.6)
 
