@@ -2,8 +2,8 @@ function varargout = drawArrow3d(pos, vec, varargin)
 %DRAWARROW3D plot a quiver of 3D arrows.
 %
 %   drawArrow3d(pos, vec) 
-%   Draw 3D arrows given the pos (position array) [x1 y1 z1; x2 y2 z2; ...] 
-%   the vec (vector array) [dx1 dy1 dz1; dx2 dy2 dz2; ...].
+%   Plots 3D arrows given the (pos)ition array [x1 y1 z1; x2 y2 z2; ...] 
+%   and the (vec)tor array [dx1 dy1 dz1; dx2 dy2 dz2; ...].
 %
 %   drawArrow3d(pos, vec, color)
 %   Optional positional argument color conforms to 'ColorSpec.'  
@@ -25,14 +25,16 @@ function varargout = drawArrow3d(pos, vec, varargin)
 %
 %   drawArrow3d(AX,...) plots into AX instead of GCA.
 %
-% Example:
-%   [X,Y] = meshgrid(1:5, -2:2);
-%   Z = zeros(size(X));
-%   pos = [X(:),Y(:),Z(:)];
+%   H = drawArrow3d(...) returns the handles of the arrows.
 %
-%   vec = zeros(size(pos));
-%   vec(:,1) = 1;
-%   drawArrow3d(pos, vec, 'g', 0.6);
+% Example:
+%    [X,Y] = meshgrid(1:5, -2:2);
+%    Z = zeros(size(X));
+%    pos = [X(:),Y(:),Z(:)];
+%    vec = zeros(size(pos));
+%    vec(:,1) = 1;
+%    drawArrow3d(pos, vec, 'g', 'stemRatio', 0.6);
+%    view(3); lighting('phong'); camlight('head'); axis('equal')
 %
 
 % ------
